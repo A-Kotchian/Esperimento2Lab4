@@ -8,5 +8,5 @@ Il link per accedere alla relazione: link
 Link a Colab coi fit: https://colab.research.google.com/drive/1i-Jb5CKBayjO_yK_K1be0ffXd68Ly2yK?usp=sharing
 
 ## Python
-Aggiornare le librerie usando il comando sul terminale: pip install -r requirements.txt
+Aggiornare le librerie usando il comando sul terminale: _pip install -r requirements.txt_
 
