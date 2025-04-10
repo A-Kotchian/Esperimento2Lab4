@@ -1,0 +1,21 @@
+import pyvisa
+rm = pyvisa.ResourceManager()
+inst=rm.open_resource('GPIB0::9::INSTR')
+
+ 
+
+inst.write("OUTP:STAT <state>") <state>=0 off, 1 on (comando per accendere spegnere)
+inst.query("OUTP:STAT?") conoscere lo stato dello strumento
+
+inst.write("VOLT <n>") <n>= valore di tensione voluto
+inst.write('CURR <n>') imposta la corrente massima
+
+inst.query('MEAS:VOLT?') legge il valore di tensione erogata
+inst.query('MEAS:CURR?') legge il valore di corrente assorbita
+
+
+
+NB: Non funziona lo spegnimento da remoto: inst.write("OUTP:STAT 0") non interrompe l'erogazione di tensione!!
+Quindi riportare sempre la tensione a 0 quandole operazioni sono concluse e poi resettare con inst.write("*RST") 
+
+NBB: se si invia il comando per impoistare la tensione con OUTPUT in OFF l'output viene abilitato!!

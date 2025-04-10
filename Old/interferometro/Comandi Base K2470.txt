@@ -1,0 +1,16 @@
+import pyvisa
+rm = pyvisa.ResourceManager()
+inst=rm.open_resource('GPIB0::18::INSTR')
+
+ 
+
+inst.write(":OUTP:STAT <state>") <state>=0 off, 1 on (comando per accendere spegnere)
+inst.query(":OUTP:STAT?") conoscere lo stato dello strumento
+
+inst.write("SOUR:VOLT <n>") <n>= valore di tensione voluto
+inst.write(':SENS:FUNC "CURR"') imposta la corrente come valore da monitorare oltre la sorgente di tensione
+
+inst.query(':READ? "defbuffer1", DATE, SOUR, READ') legge i valori erogati dallo strumento (da fare per aggiornare il display)
+
+SE NECESSARIO
+inst.write("SOUR:VOLT:ILIM <a>") <a>= valore limite di corrente (in A), imposta la corrente massima erogabile
