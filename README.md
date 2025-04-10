@@ -7,6 +7,8 @@ Il link per accedere alla relazione: link
 ## Colab
 Link a Colab coi fit: https://colab.research.google.com/drive/1i-Jb5CKBayjO_yK_K1be0ffXd68Ly2yK?usp=sharing
 
-## Python
-Aggiornare le librerie usando il comando sul terminale: _pip install -r requirements.txt_
+
+> [!TIP]
+> Aggiornare le librerie usando il comando sul terminale :grin::   "_pip install -r requirements.txt_"
+
 
