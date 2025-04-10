@@ -6,7 +6,6 @@ deprecation==2.1.0
 hightime==0.2.2
 jsonpointer==2.1
 matplotlib==3.9.2
-mkl-service==2.4.0
 nidaqmx==1.0.2
 protobuf==4.25.3
 pyasn1-modules==0.2.8
