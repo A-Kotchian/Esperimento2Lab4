@@ -5,4 +5,4 @@ Questo è la repository di Laboratorio magistrale 2024-2025 qui sotto troverete 
 Il link per accedere alla relazione: link
 
 ## Colab
-Link a Colab coi fit: link
+Link a Colab coi fit: https://colab.research.google.com/drive/1i-Jb5CKBayjO_yK_K1be0ffXd68Ly2yK?usp=sharing
