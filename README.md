@@ -2,8 +2,7 @@
 Questo è la repository di Laboratorio magistrale 2024-2025 qui sotto troverete tutto quello che vi serve :) 
 
 ## Overleaf 
-Il link per accedere alla relazione: link
-
+Il link per accedere alla relazione: https://www.overleaf.com/3475963645wpzknfrjftwn#a7eb44
 ## Colab
 Link a Colab coi fit: https://colab.research.google.com/drive/1i-Jb5CKBayjO_yK_K1be0ffXd68Ly2yK?usp=sharing
 
