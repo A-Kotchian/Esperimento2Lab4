@@ -8,7 +8,7 @@ import scipy.odr as odr
 
 
 #Dati e variabili
-file_path = "triang_tutti_belli.csv"
+file_path = "L_off.csv"
 data = pd.read_csv(file_path)
 
 V_o=data['A_mean'].values
@@ -22,6 +22,16 @@ V_out_err=V_o_err[1:]
 
 
 t=np.linspace(0,len(V_out)/2,len(V_out))
+
+# mask = [i%2 == 0 for i in range(0,len(V_in))]
+# V_in = V_in[mask]
+
+plt.plot(t, V_in, color = "indianred", linewidth = 2)
+plt.title('Tensione erogata ai piezoelettrici')
+plt.xlabel("Tempo [s]")
+plt.ylabel("Tensione [V]")
+plt.show()
+
 V_in_salita=V_in[:int(len(V_in)/2)]
 V_in_salita_err=np.full(len(V_in_salita),0.01)
 
@@ -35,11 +45,9 @@ V_out_salita_err=V_out_err[:int(len(V_out)/2)]
 V_out_discesa=V_out[int(len(V_out)/2):]
 V_out_discesa_err=V_out_err[int(len(V_out)/2):]
 
-#Segnale nel tempo
-#plt.plot(t,V_out)
-#plt.show()
 
-"""
+
+
 # Plot salita
 plt.errorbar(V_in_salita,V_out_salita,xerr=V_in_salita_err,yerr=V_out_salita_err,color="mediumseagreen")
 plt.title("Segnale in uscita dal fotodiodo, rampa in salita")
@@ -55,7 +63,7 @@ plt.title("Segnale in uscita dal fotodiodo, rampa in discesa")
 plt.xlabel("Tensione di alimentazione [V]")
 plt.ylabel("Tensione in uscita [V] ") 
 plt.show()
-"""
+
 
 def test_func(p,x):
     a,b,c,d=p
@@ -65,7 +73,6 @@ def test_func(p,x):
     """
     return c*np.sin(a*x+b)+d
 
-"""
 
 # Fit in salita
 pstart = [ 0.68669015, -2.00904276, -1.0864331,  1.73886837]
@@ -101,7 +108,7 @@ fit_out_sim_2.pprint()
 xtest_2 = np.linspace(10, 100,400)
 ytest_2 = test_func(fit_out_sim_2.beta, xtest_2)
 plt.plot(xtest_2,ytest_2 , label ="Fit", color="#6acc8c",linewidth= 1.6)
-plt.errorbar(V_in_discesa,V_out_discesa,xerr=V_in_discesa_err,yerr=V_out_discesa_err, fmt=".--",label="Dati",linewidth= 1,color = "#786394")
+plt.errorbar(V_in_discesa,V_out_discesa,xerr=V_in_discesa_err,yerr=V_out_discesa_err, fmt=".--",label="Dati",linewidth= 1,color = "#7D5FA5")
 plt.title("Fit rampa in discesa")
 plt.xlabel("Tensione di alimentazione [V]")
 plt.xlim(0,110)
@@ -110,7 +117,7 @@ plt.ylabel("Tensione in uscita [V] ")
 plt.legend(loc="upper right")
 plt.show()
 
-"""
+
 #Fit a pezzi 
 
 #salita
